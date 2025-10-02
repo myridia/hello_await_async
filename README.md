@@ -27,4 +27,4 @@ foo("Second");
 
 ```
 ## Demo site
- [myridia.github.io ](https://hello_await_async.myridia.com/)
+ [myridia.github.io ](https://hello-await-async.myridia.com/)
