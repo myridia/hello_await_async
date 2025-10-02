@@ -1,17 +1,48 @@
 window.onload = function () {
-  foo("First");
-  foo("Second");
+  /************* 1 Button *****************/
+  document
+    .querySelector("#syncron_basic")
+    .addEventListener("click", function (e) {
+      document.querySelector("#log").value =
+        "...click button " + e.target.id + "\n";
+      setTimeout(syncron_basic, 1000);
+    });
 
-  //afetch("First");
-  //afetch("Second");
+  /************* 2 Button *****************/
+  document
+    .querySelector("#async_basic")
+    .addEventListener("click", function (e) {
+      document.querySelector("#log").value =
+        "...click button " + e.target.id + "\n";
+      setTimeout(async_basic, 1000);
+
+      //async_basic(e);
+    });
 };
 
+/********************** 1 button ********************/
+function syncron_basic(e) {
+  foo("First");
+  foo("Second");
+}
 async function foo(name) {
-  console.log(name, "start");
-  await console.log(name, "middle");
-  console.log(name, "end");
+  log(name + " start");
+  log(name + " middle");
+  log(name + " end");
 }
 
+/********************** 2 button ********************/
+function async_basic(e) {
+  afoo("First");
+  afoo("Second");
+}
+async function afoo(name) {
+  log(name + " start");
+  await log(name + " middle");
+  log(name + " end");
+}
+
+/*
 async function afetch(name) {
   console.log(name, "start");
   // Replace with your API
@@ -21,4 +52,11 @@ async function afetch(name) {
   const r = await fetch(url);
   const d = await r.json();
   console.log(name, "end");
+}
+*/
+
+/* Logger to console and textarea */
+async function log(msg) {
+  document.querySelector("#log").value += msg + "\n";
+  console.log(msg);
 }
