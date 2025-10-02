@@ -1,0 +1,16 @@
+.container_flex {
+    display: flex;
+    flex-direction: row;
+}
+.column {
+  flex: 0 1 auto;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #111;
+  background-color: #eee;
+}
+
+#log {
+    width: 500px;
+    height: 600px;
+}
