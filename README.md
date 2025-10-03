@@ -6,6 +6,10 @@ Showcase the useage of JavaScript await async
 * Open your Browser Inspector to the console.log() 
 
 
+## Demo site
+ (https://hello-await-async.myridia.com/)
+
+## Documents from  
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
 
 ```
@@ -26,5 +30,4 @@ foo("Second");
 // Second end
 
 ```
-## Demo site
- [myridia.github.io ](https://hello-await-async.myridia.com/)
+
