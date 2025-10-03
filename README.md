@@ -7,7 +7,7 @@ Showcase the useage of JavaScript await async
 
 
 ## Demo site
- (https://hello-await-async.myridia.com/)
+https://hello-await-async.myridia.com
 
 ## Documents from  
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
