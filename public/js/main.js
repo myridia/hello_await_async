@@ -42,18 +42,40 @@ async function afoo(name) {
   log(name + " end");
 }
 
-/*
-async function afetch(name) {
-  console.log(name, "start");
-  // Replace with your API
-  const url =
-    "http://127.0.0.1:8088/gold_pvd_loss_controls?date_from=20250801&ldate_until=20250731&ldate_from=20250701&date_until=20250831&clear_cache=1";
-  //await console.log(name, "middle");
-  const r = await fetch(url);
-  const d = await r.json();
-  console.log(name, "end");
-}
+
+  function  afetch_all(callback, ...urls) {
+    // Create the function array from the urls
+    let function_array = [];
+    for (let i in urls) {
+      function_array.push(this.afetch(i, urls[i]));
+    }
+
+    /* Send the function array wait for all function
+     * Once its processed it send the final result back to the callback caller
+     */
+    this.wait_for_all(...function_array).then((results) => callback(results));
+  }
+
+ /*
+https://github.com/veto8/vanilla-website-utils/blob/main/vanilla-website-utils.js#L458
 */
+ function  wait_for_all(...ps) {
+    return Promise.all(ps.map(this.handle_rejection));
+  }
+
+ 
+  async function  afetch(i, url) {
+    const r = await fetch(url);
+    const d = await r.json();
+    return [parseInt(i), d];
+  }
+
+ function  handle_rejection(p) {
+    return p.catch((error) => ({
+      error,
+    }));
+  }
+
 
 /* Logger to console and textarea */
 async function log(msg) {
