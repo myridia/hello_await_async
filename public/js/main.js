@@ -15,9 +15,18 @@ window.onload = function () {
       document.querySelector("#log").value =
         "...click button " + e.target.id + "\n";
       setTimeout(async_basic, 1000);
-
-      //async_basic(e);
     });
+
+
+  /************* 2 Button *****************/
+  document
+    .querySelector("#async_all_fetch")
+    .addEventListener("click", function (e) {
+      document.querySelector("#log").value =
+        "...click button " + e.target.id + "\n";
+      setTimeout(async_all_fetch, 1000);
+    });
+
 };
 
 /********************** 1 button ********************/
@@ -41,6 +50,15 @@ async function afoo(name) {
   await log(name + " middle");
   log(name + " end");
 }
+
+/********************** 3 button ********************/
+function async_all_fetch(e) {
+  //afoo("First");
+  //afoo("Second");
+  const url "https://hello-await-async.myridia.com/json/postal_code_01.json";
+  
+}
+
 
 
   function  afetch_all(callback, ...urls) {
