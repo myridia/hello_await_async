@@ -10,7 +10,10 @@
   background-color: #eee;
 }
 
+button {
+    cursor:pointer;
+}
 #log {
     width: 500px;
-    height: 600px;
+    height: 260px;
 }

@@ -1,5 +1,6 @@
 # Hello await async
 Showcase the useage of JavaScript await async 
+This Repository is for learning and demotration. 
 
 * Start the docker inside dockers
 * Access the page under http://127.0.0.1
